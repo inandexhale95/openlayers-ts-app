@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="https://openlayers.org/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Using OpenLayers with Vite</title>
+</head>
+
+<body>
+
+  <div id="map" style="width: 100%; height: 1000px"></div>
+  <div id="popup" class="ol-popup">
+    <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+    <div id="popup-content"></div>
+  </div>
+
+  <ul id="legendUl" style="display: block;">
+    <li>
+      <img src="cmmn/images/water/sil_01.png" alt="국립수산과학원">
+      <a href="javascript:markersVisible(1);" style="text-decoration: none; color: black;">국립수산과학원</a>
+      <p id="nifsVisible" style="display: none;">T</p>
+    </li>
+    <li>
+      <a href="javascript:markersVisible(2);" style="text-decoration: none; color: black;">기상청</a>
+      <p id="gisangVisible" style="display: none;">T</p>
+    </li>
+    <li>
+      <a href="javascript:markersVisible(3);" style="text-decoration: none; color: black;">한국수력원자력</a>
+      <p id="khnpVisible" style="display: none;">T</p>
+    </li>
+    <li>
+      <a href="javascript:markersVisible(5);" style="text-decoration: none; color: black;">전라남도</a>
+      <p id="jeonraVisible" style="display: none;">T</p>
+    </li>
+    <li>
+      <a href="javascript:markersVisible(8);" style="text-decoration: none; color: black;">전남과학원</a>
+      <p id="jnifsVisible" style="display: none;">T</p>
+    </li>
+    <li>
+      <a href="javascript:markersVisible(11);" style="text-decoration: none; color: black;">완도군청</a>
+      <p id="wandoVisible" style="display: none;">T</p>
+    </li>
+    <li>
+      <a href="javascript:markersVisible(12);" style="text-decoration: none; color: black;">태안군청</a>
+      <p id="taeanVisible" style="display: none;">T</p>
+    </li>
+  </ul>
+
+  <script type="module" src="./src/main.ts"></script>
+</body>
+
+</html>
