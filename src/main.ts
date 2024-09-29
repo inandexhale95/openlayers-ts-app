@@ -25,20 +25,20 @@ $.ajax({
     service: "WFS",
     version: "2.0.0",
     key: API_KEY,
-    domain: "http://localhost:5173",
     request: "GetFeature",
     typename: "lt_c_bldginfo",
     srsname: "EPSG:3857",
-    output: "application/json",
+    output: "text/javascript", // text/javascript로 설정해야 JSONP 응답을 받을 수 있다.
     exceptions: "application/json",
+    format_options: "callback:callback", // 서버가 이 콜백 함수 이름을 사용하도록 설정
   }),
-  dataType: "jsonp",
   jsonpCallback: "callback",
+  dataType: "jsonp",
   success: function (data) {
     console.log(data);
   },
-  error: function (e) {
-    console.error(`AJAX 요청 실패 ${e.responseText} `);
+  error: function (xhr, status, error) {
+    console.error(`AJAX 요청 실패 ${xhr.statusText}, ${status}, ${error}`);
   },
 });
 
